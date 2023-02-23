@@ -1,18 +1,19 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import { RouterLink, RouterView } from "vue-router";
+import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img src="https://livewallpapers4free.com/wp-content/uploads/2022/05/thumb2-25.jpg"/>
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <HelloWorld msg="Personajes de Rick & Morty" />
 
       <nav>
-        <RouterLink to="/">Inicio</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink class="col s6" to="/">Inicio</RouterLink>
+        <RouterLink class="col s6" to="/personajes">Personajes</RouterLink>
+        <RouterLink class="col s6" to="/about">Acerca de</RouterLink>
       </nav>
     </div>
   </header>
