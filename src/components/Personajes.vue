@@ -9,7 +9,7 @@ export default {
     return {
       info: [],
       personajes: [],
-      cont:2
+      cont:1
     }
   },
 
@@ -33,6 +33,17 @@ export default {
       })
       this.cont++
     }
+    per(id) {
+      API_URL='https://rickandmortyapi.com/api/character'+num
+      console.log(API_URL)
+      axios.get(API_URL)
+      .then((response) => {
+        console.log(response.config)
+        this.info = response.data.info;
+        this.personajes = response.data.results;
+      })
+      this.cont++
+    }
   },
 
 }
@@ -44,7 +55,8 @@ export default {
   <button @click="pag(cont)">página {{ cont }}</button>
   <ul>
     <li v-for="p in personajes">
-      <a >{{ p.name }} id:{{ p.id }}</a> 
+      <a >{{ p.name }} id:{{ p.id }}</a>
+      <button @click="per(p.id)" >Ver mas</button>  
     </li>
   </ul>
 </template>
